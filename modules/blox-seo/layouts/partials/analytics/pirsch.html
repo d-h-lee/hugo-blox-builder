@@ -1,5 +1,5 @@
-<!-- {{ $pirsch := site.Params.marketing.analytics.pirsch | default "" }} -->
+{{ $pirsch := site.Params.marketing.analytics.pirsch | default "" }}
 
-<!-- {{ if hugo.IsProduction | and $pirsch }} -->
+{{ if hugo.IsProduction | and $pirsch }}
 <script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="{{$pirsch}}"></script>
-<!-- {{ end }} -->
+{{ end }}
