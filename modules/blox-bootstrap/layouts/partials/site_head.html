@@ -197,11 +197,11 @@
   {{/* Load SEO module */}}
   {{ partial "blox_seo" . }}
 
-  {{/* sanity check hack */}}
+  <!-- {{/* sanity check hack */}}
   {{ $pirsch := site.Params.marketing.analytics.pirsch | default "" }}
   {{ if hugo.IsProduction | and $pirsch }}
   <script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="{{$pirsch}}"></script>
-  {{ end }}
+  {{ end }} -->
 
   {{/* Netlify Identity integration. */}}
   {{ $use_cms := templates.Exists "decap_cms/single.decap_cms_config.yml" | default (site.Params.extensions.decap_cms.enable | default false) }}
