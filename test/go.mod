@@ -1,4 +1,4 @@
-module github.com/HugoBlox/hugo-blox-builder/test
+module github.com/d-h-lee/hugo-blox-builder/test
 
 go 1.15
 
