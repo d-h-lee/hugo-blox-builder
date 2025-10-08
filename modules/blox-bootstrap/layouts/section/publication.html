@@ -50,6 +50,9 @@
       </div>
 
       <div id="container-publications">
+
+        <!-- DHL  -->
+        {{ $total := len .Pages }}
         {{ range $index, $item := .Pages.ByDate.Reverse }}
 
         {{ if .Params.publication_types }}
@@ -59,7 +62,16 @@
         {{ end }}
 
         <div class="grid-sizer col-lg-12 isotope-item pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ .Date.Format "2006" }}">
-          {{ partial "functions/render_view" (dict "page" $ "item" . "view" ($.Params.view | default "compact") "index" $index) }}
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ .Date.Format "2006" }}">
+            {{ partial "functions/render_view" (dict
+                "page"   $
+                "item"   .
+                "view"   ($.Params.view | default "compact")
+                "index"  $index
+                "total"  $total
+            ) }}
+          </div>
+          <!-- {{ partial "functions/render_view" (dict "page" $ "item" . "view" ($.Params.view | default "compact") "index" $index) }} -->
         </div>
 
         {{ end }}
