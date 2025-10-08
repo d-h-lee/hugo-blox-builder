@@ -16,7 +16,7 @@
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
 -->
-{{ $icon := "fa-file-alt" }}  {{/* default */}}
+{{ $icon := "fa-file-magnifying-glass" }}  {{/* default */}}
 {{ if eq $pubtype "1" }} {{ $icon = "fa-file-magnifying-glass" }} {{ end }}       {{/* conference */}}
 {{ if eq $pubtype "2" }} {{ $icon = "fa-file-certificate" }} {{ end }}       {{/* journal */}}
 {{ if eq $pubtype "3" }} {{ $icon = "fa-file-half-dashed" }} {{ end }}             {{/* preprint */}}

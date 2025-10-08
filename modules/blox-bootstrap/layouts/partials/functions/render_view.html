@@ -35,6 +35,6 @@
   {{ $total := .total }}
   {{ return (partial (printf "views/%s" $view_file) (dict "page" $page "item" $item "index" $index "total" $total)) }}
 {{else}}
-  {{ return (partial (printf "views/%s" $view_file) (dict "page" $page "item" $item "index" $index)) }}
+  {{ return (partial (printf "views/%s" $view_file) (dict "page" $page "item" $item "index" $index "total" $total)) }}
 {{ end }}
 
