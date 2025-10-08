@@ -1,0 +1,25 @@
+{{/* Hugo Blox: Logos Block */}}
+
+{{ $block := .wcBlock }}
+{{ $page := .wcPage }}
+{{ $title := $block.content.title | emojify | $page.RenderString }}
+{{ $folder := $block.content.logo_folder | default "logos" }}
+{{ $glob := printf "media/%s/*" $folder }}
+{{ $logos := resources.Match $glob }}
+
+<!-- <section class="logos py-12"> -->
+<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6">
+
+  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+    {{ $title }}
+  </div>
+  <!-- {{ with $block.content.title }}
+    <h2 class="text-center mb-8 text-3xl font-bold">{{ . | markdownify }}</h2>
+  {{ end }} -->
+  <div class="flex flex-wrap justify-center items-center gap-8">
+    {{ range $logos }}
+      <img src="{{ .RelPermalink }}" alt="{{ .Name }}" class="h-8 md:h-10 lg:h-12 object-contain" loading="lazy">
+    {{ end }}
+  </div>
+</div>
+<!-- </section> -->
