@@ -3,7 +3,7 @@
 <!-- DHL -->
 {{ $index := .index }}
 {{ $total := .total }}
-{{ $number := sub $total $index }} 
+{{ $number := sub (int $total) (int $index) }}
 
 {{ $pubtypes := $item.Params.publication_types }}
 {{ $pubtype := "0" }}
