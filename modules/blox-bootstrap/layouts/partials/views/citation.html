@@ -15,16 +15,17 @@
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
+https://www.w3schools.com/icons/icons_reference.asp see Font Awesome 5 icons
 -->
-{{ $icon := "fa-file-magnifying-glass" }}  {{/* default */}}
-{{ if eq $pubtype "1" }} {{ $icon = "fa-file-magnifying-glass" }} {{ end }}       {{/* conference */}}
-{{ if eq $pubtype "2" }} {{ $icon = "fa-file-certificate" }} {{ end }}       {{/* journal */}}
-{{ if eq $pubtype "3" }} {{ $icon = "fa-file-half-dashed" }} {{ end }}             {{/* preprint */}}
-{{ if eq $pubtype "4" }} {{ $icon = "fa-file-magnifying-glass" }} {{ end }}             {{/* report */}}
+{{ $icon := "fa-file" }}  {{/* default */}}
+{{ if eq $pubtype "1" }} {{ $icon = "fa-file-alt" }} {{ end }}       {{/* conference */}}
+{{ if eq $pubtype "2" }} {{ $icon = "fa-file-invoice" }} {{ end }}       {{/* journal */}}
+{{ if eq $pubtype "3" }} {{ $icon = "fa-file" }} {{ end }}             {{/* preprint */}}
+{{ if eq $pubtype "4" }} {{ $icon = "fa-file-archive" }} {{ end }}             {{/* report */}}
 {{ if eq $pubtype "5" }} {{ $icon = "fa-book" }} {{ end }}             {{/* book */}}
 {{ if eq $pubtype "6" }} {{ $icon = "fa-book-open" }} {{ end }}             {{/* book section */}}
 {{ if eq $pubtype "7" }} {{ $icon = "fa-graduation-cap" }} {{ end }}   {{/* thesis */}}
-{{ if eq $pubtype "8" }} {{ $icon = "fa-cog" }} {{ end }}              {{/* patent */}}
+{{ if eq $pubtype "8" }} {{ $icon = "fa-cogs" }} {{ end }}              {{/* patent */}}
 
 <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
   <span class="pub-number fw-bold text-secondary">{{ $number }}.</span>
@@ -43,7 +44,7 @@
   {{ else if $item.Params.publication }}
     {{- $item.Params.publication | markdownify -}}.
   {{ end }}
-  <p>{{ partial "page_links" (dict "page" $item "is_list" 1) }}</p>
+  <div class="btn-links">{{ partial "page_links" (dict "page" $item "is_list" 1) }}</div>
 
   {{/* MLA Style */}}
   {{ else }}
