@@ -31,10 +31,6 @@
 {{ end }}
 
 <!-- DHL -->
-<!-- {{if eq $view_file "citation"}} -->
 {{ $total := .total }}
 {{ return (partial (printf "views/%s" $view_file) (dict "page" $page "item" $item "index" $index "total" $total)) }}
-<!-- {{else}}
-  {{ return (partial (printf "views/%s" $view_file) (dict "page" $page "item" $item "index" $index)) }}
-{{ end }} -->
 
