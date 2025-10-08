@@ -85,7 +85,7 @@
   {{ with $block.content.text }}{{ . | emojify | $page.RenderString }}{{ end }}
 
   {{ range $index, $item := $query }}
-    {{ partial "functions/render_view" (dict "page" $block "item" . "view" ($block.design.view | default "compact") "index" $index) }}
+    {{ partial "functions/render_view" (dict "page" $block "item" . "view" ($block.design.view | default "compact") "index" $index "total" 0) }}
   {{end}}
 
   {{/* Archive link */}}
