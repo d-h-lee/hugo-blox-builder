@@ -19,5 +19,5 @@
 {{ $view = cond (in (slice "1" "2" "3" "4") $view) (int $view) $view }}
 
 {{ with site.GetPage $item }}
-  {{ partial "functions/render_view" (dict "page" $page "item" . "view" $view "index" 0) }}
+  {{ partial "functions/render_view" (dict "page" $page "item" . "view" $view "index" 0 "total" 0) }}
 {{ end }}
